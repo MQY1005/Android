@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -43,15 +42,19 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
                 } else if (!password.equals(passwordAgain)) {
                     Toast.makeText(RegisterActivity.this, "两次密码必须一致", Toast.LENGTH_SHORT).show();
+                } else if (isExist(username)) {
+                    Toast.makeText(RegisterActivity.this, "此用户已存在", Toast.LENGTH_SHORT).show();
                 } else {
                     //3.3 将注册信息存储
                     savePref(username, MD5Utils.md5(password));
                     //3.4 跳转登录页面
                     // 给bnt1添加点击响应事件
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                  //  Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    Intent intent=new Intent();
                     intent.putExtra("username", username);
                     //启动
-                    startActivity(intent);
+                   setResult(RESULT_OK);
+                   finish();
                 }
             }
         });
@@ -76,10 +79,19 @@ public class RegisterActivity extends AppCompatActivity {
 //    }
 
     private void savePref(String username, String password) {
-        SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
-        editor.putString("username", username);
-        editor.putString("password", password);
+        SharedPreferences.Editor editor = getSharedPreferences("userInfo", MODE_PRIVATE).edit();
+//        editor.putString("username", username);
+//        editor.putString("password", password);
+        editor.putString(username,password);
         editor.apply();
+        //Log.d("RegisterActivity",password);
+    }
+    //判断用户名是否存在
+    //true 存在 falsebucz
+    private boolean isExist(String username){
+        SharedPreferences sp=getSharedPreferences("userInfo",MODE_PRIVATE);
+        String pwd=sp.getString(username,"");
+        return !TextUtils.isEmpty(pwd);
     }
 
     private void initView() {

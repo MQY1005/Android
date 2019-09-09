@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +31,12 @@ public class LoginActivity extends AppCompatActivity {
             userName.setText(username);
         }
     }
+//    private void saveLoginStatus(String username,boolean isLogin){
+//        getSharedPreferences("userInfo",MODE_PRIVATE).edit()
+//                .putString("loginUser",username)
+//                .putBoolean("isLogin",isLogin)
+//                .apply();
+//    }
 
     private String readPref() {
         SharedPreferences sp=getSharedPreferences("userInfo",MODE_PRIVATE);
@@ -47,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
     }
