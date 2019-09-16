@@ -8,8 +8,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_bg"
-    tools:context=".RegisterActivity"
+    tools:context=".activity.RegisterActivity"
     android:orientation="vertical">
+    <include layout="@layout/tool_bar" />
     <!--<include layout="@layout/main_title_bar"></include>&lt;!&ndash;引入标题栏&ndash;&gt;-->
     <ImageView
         android:layout_width="70dp"
