@@ -23,6 +23,8 @@
         <item name="android:windowTranslucentStatus">true</item>
 
         <item name="android:windowContentOverlay">@null</item>
+        <!--自定义AlertDialog-->
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
     </style>
 
     <!-- 设置工具栏标题颜色-->

@@ -1,4 +1,4 @@
-package com.example.myapplication.activity;
+package com.example.myapplication.fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.activity.LoginActivity;
+import com.example.myapplication.activity.SettingActivity;
 
 
 public class MySettingFragment extends Fragment {
