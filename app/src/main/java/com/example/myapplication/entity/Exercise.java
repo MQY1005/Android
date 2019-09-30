@@ -8,8 +8,16 @@ public class Exercise implements Serializable {
     private int id;
     private  String title;
     private  String subTitle;
-    private  int backgrount;
+    private  int background;
+    private String bgColor;
 
+    public String getBgColor() {
+        return bgColor;
+    }
+
+    public void setBgColor(String bgColor) {
+        this.bgColor = bgColor;
+    }
 
     @Override
     public String toString() {
@@ -17,15 +25,17 @@ public class Exercise implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", subTitle='" + subTitle + '\'' +
-                ", backgrount=" + backgrount +
+                ", background=" + background +
+                ", bgColor='" + bgColor + '\'' +
                 '}';
     }
 
-    public Exercise(int id, String title, String subTitle, int backgrount) {
+
+    public Exercise() {
         this.id = id;
         this.title = title;
         this.subTitle = subTitle;
-        this.backgrount = backgrount;
+        this.background = background;
     }
 
     public int getId() {
@@ -52,12 +62,12 @@ public class Exercise implements Serializable {
         this.subTitle = subTitle;
     }
 
-    public Drawable getBackgrount() {
+    public Drawable getBackground() {
         return null;
     }
 
-    public void setBackgrount(int backgrount) {
-        this.backgrount = backgrount;
+    public void setBackground(int background) {
+        this.background = background;
     }
 
 

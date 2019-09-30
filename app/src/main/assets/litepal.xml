@@ -32,7 +32,7 @@
     	</list>
     -->
     <list>
-        <mapping class="edu.niit.android.course.entity.UserInfo" />
+        <mapping class="com.example.myapplication.entity.UserInfo" />
     </list>
 
     <!--
