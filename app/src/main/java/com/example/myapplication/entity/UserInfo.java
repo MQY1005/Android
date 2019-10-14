@@ -1,31 +1,15 @@
 package com.example.myapplication.entity;
 
+import org.litepal.crud.LitePalSupport;
+
 import java.io.Serializable;
 
-public class UserInfo implements Serializable {
+public class UserInfo extends LitePalSupport implements Serializable {
     private int _id;
     private String username;
+    private String nickname;
     private String sex;
     private String signature;
-    private String nickname;
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public UserInfo() {
-    }
-
-    public UserInfo(String username, String sex, String signature,String nickname) {
-        this.username = username;
-        this.sex = sex;
-        this.signature = signature;
-        this.nickname=nickname;
-    }
 
     public int get_id() {
         return _id;
@@ -43,6 +27,14 @@ public class UserInfo implements Serializable {
         this.username = username;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public String getSex() {
         return sex;
     }
@@ -55,19 +47,17 @@ public class UserInfo implements Serializable {
         return signature;
     }
 
-
     public void setSignature(String signature) {
         this.signature = signature;
     }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "UserInfo{" +
                 "username='" + username + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", sex='" + sex + '\'' +
                 ", signature='" + signature + '\'' +
                 '}';
     }
-
 }
-
-

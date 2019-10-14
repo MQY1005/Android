@@ -3,7 +3,7 @@ package com.example.myapplication.utils;
 import android.util.Xml;
 
 import com.alibaba.fastjson.JSON;
-import com.example.myapplication.entity.ExerciseDatail;
+import com.example.myapplication.entity.ExerciseDetail;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -37,9 +37,9 @@ public class IOUtils {
         return JSON.parseArray(json, cls);
     }
 
-    public static List<ExerciseDatail> getXmlContents(InputStream is) throws Exception {
-        List<ExerciseDatail> details = null;
-        ExerciseDatail detail = null;
+    public static List<ExerciseDetail> getXmlContents(InputStream is) throws Exception {
+        List<ExerciseDetail> details = null;
+        ExerciseDetail detail = null;
         XmlPullParser parser = Xml.newPullParser();
         parser.setInput(is, StandardCharsets.UTF_8.toString());
         int eventType = parser.getEventType();
@@ -50,7 +50,7 @@ public class IOUtils {
                 if ("infos".equals(nodeName)) {
                     details = new ArrayList<>();
                 } else if ("exercise".equals(nodeName)) {
-                    detail = new ExerciseDatail();
+                    detail = new ExerciseDetail();
                     String ids = parser.getAttributeValue(0);
                     detail.setSubjectId(Integer.parseInt(ids));
 

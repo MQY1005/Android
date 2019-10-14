@@ -90,7 +90,7 @@ public class ExerciseFragment extends Fragment {
         try{
             InputStream input =getResources().getAssets().open("exercise_title.json");
 //            String json=IOUtils.convert(json,Exercise.class);
-//            exercise = IOUtils.convert(json,Exercise.class);
+      //      exercise = IOUtils.convert(json,Exercise.class);
         }catch (IOException e){
             e.printStackTrace();
 
@@ -101,8 +101,8 @@ public class ExerciseFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
         void setToolbarTitle(String title);
 
+        void onFragmentInteraction(Uri uri);
     }
 }
