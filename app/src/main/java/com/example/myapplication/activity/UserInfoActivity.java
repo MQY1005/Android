@@ -219,6 +219,16 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         // 2.3 保存到数据库
         service.modify(userInfo);
     }
+    //读取
+//    private UserInfo readPublicExternalStorage() {
+//        UserInfo userInfo = null;
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_DENIED)
+//                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+//                        REQUEST_PERMISSION_READ);
+//        }
+//
+//    }
 
     //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

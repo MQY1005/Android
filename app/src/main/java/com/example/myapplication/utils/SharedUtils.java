@@ -1,7 +1,10 @@
 package com.example.myapplication.utils;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+
+import com.example.myapplication.activity.CourseVideoActivity;
 
 public class SharedUtils {
     private static final String SP_NAME = "userInfo";
@@ -55,5 +58,5 @@ public class SharedUtils {
         SharedPreferences sp = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
         return sp.getString(key, "");
     }
-}
 
+}
